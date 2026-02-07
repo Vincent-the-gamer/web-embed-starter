@@ -1,0 +1,16 @@
+[package]
+name = "web-embed-starter"
+description = "An Axum web application starter that embeds a web ui into your Rust-based web server binary file."
+authors = ["Vincent-the-gamer"]
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.101"
+axum = { version = "0.8.8", features = ["macros"] }
+axum-embed = "0.1.0"
+rust-embed = "8.11.0"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.149"
+tokio = { version = "1.49.0", features = ["full"] }
+tracing-subscriber = "0.3.22"
