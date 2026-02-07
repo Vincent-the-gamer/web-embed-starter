@@ -9,6 +9,13 @@ const viteVersion = packageJson.devDependencies.vite;
 
 const response = ref<Record<string, any>>({});
 
+const router = useRouter();
+const route = ref("");
+
+function go() {
+  router.push(`/hi/${route.value}`);
+}
+
 async function ping() {
   const resp = await fetch("http://localhost:8000/ping", {
     method: "POST",
@@ -47,7 +54,21 @@ async function ping() {
 
     <div py-4 />
 
-    <button btn @click="ping">Ping!</button>
+    <input
+      v-model="route"
+      type="text"
+      placeholder="Enter route"
+      h-8
+      border-rd-2
+      p-2
+      border="~ 3 pink"
+      color-black
+    />
+
+    <div flex="~ gap-2 justify-center" mt-3>
+      <button btn @click="go">Go</button>
+      <button btn @click="ping">Ping!</button>
+    </div>
 
     <div mt-4 font-size-8>
       {{ response.message }}
