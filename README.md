@@ -2,7 +2,7 @@
 
 An Axum web application starter that embeds a web ui into your Rust-based web server binary file.
 
-## Why?
+## Why
 
 I like the design of [Dufs](https://github.com/sigoden/dufs) very much, it contains a Web UI into one single binary file.
 
@@ -25,7 +25,7 @@ npx degit Vincent-the-gamer/web-embed-starter
 
 2. Install both Rust and Web UI(a Vue project) dependencies
 
-Do these things in order to initialize the project.
+Do these things sequentially to initialize the project.
 
 ```shell
 cd webui
