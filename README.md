@@ -24,6 +24,15 @@ npx degit Vincent-the-gamer/web-embed-starter
 ```
 
 2. Install both Rust and Web UI(a Vue project) dependencies
+
+```shell
+cargo check
+
+cd webui
+
+pnpm i
+```
+
 3. Write your backend APIs in Rust project
 4. Write your Web UI in Vue project, remember to set base url to your backend server address.
 5. Build your frontend UI
