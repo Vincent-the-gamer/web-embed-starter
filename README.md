@@ -1,6 +1,6 @@
 # web-embed-starter
 
-An Axum web application starterthat embeds a web ui into your Rust-based web server binary file.
+An Axum web application starter that embeds a web ui into your Rust-based web server binary file.
 
 ## Why?
 
@@ -11,7 +11,7 @@ I like the design of [Dufs](https://github.com/sigoden/dufs) very much, it conta
 You need to install the following dev environments
 
 - Rust
-- Node.js
+- Node.js (v20+ is recommended)
 - Git
 
 ## Usage
