@@ -1,7 +1,9 @@
-use axum::{Json, routing::post};
+pub mod ping;
+
+use crate::ping::ping;
+use axum::routing::post;
 use axum_embed::ServeEmbed;
 use rust_embed::RustEmbed;
-use serde::{Deserialize, Serialize};
 use tokio::net::TcpListener;
 
 #[derive(RustEmbed, Clone)]
@@ -21,15 +23,4 @@ async fn main() -> anyhow::Result<()> {
     println!("Server started!");
     axum::serve(listener, app).await?;
     Ok(())
-}
-
-#[derive(Serialize, Deserialize)]
-struct Message {
-    code: u32,
-    message: String,
-}
-
-#[axum::debug_handler]
-async fn ping(Json(payload): Json<Message>) -> Json<Message> {
-    Json(payload)
 }
