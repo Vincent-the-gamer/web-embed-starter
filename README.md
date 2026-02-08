@@ -38,9 +38,9 @@ cargo check
 ```
 
 3. Write your backend APIs in Rust project
-4. Write your Web UI in Vue project, remember to set base url to your backend server address.
-5. Build your frontend UI
-6. Build your backend server into a binary file, it will contain the Web UI, visit it at the base url of your server.
+4. Write your Web UI in Vue project.
+5. Build your frontend UI.
+6. Set your host and port, then build your backend server into a binary file, it will contain the Web UI, visit it at the base url of your server.
 
 # License
 

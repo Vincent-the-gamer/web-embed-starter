@@ -16,7 +16,7 @@ async fn main() -> anyhow::Result<()> {
     // Log
     logger::init_logger();
 
-    let listener = TcpListener::bind("127.0.0.1:8000").await?;
+    let listener = TcpListener::bind("0.0.0.0:8000").await?;
     let serve_assets = ServeEmbed::<Assets>::new();
     let app = axum::Router::new()
         .fallback_service(serve_assets)
