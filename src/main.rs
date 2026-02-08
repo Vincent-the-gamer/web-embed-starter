@@ -1,3 +1,4 @@
+pub mod logger;
 pub mod ping;
 
 use crate::ping::ping;
@@ -12,14 +13,14 @@ struct Assets;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // initialize tracing
-    tracing_subscriber::fmt::init();
+    // Log
+    logger::init_logger();
 
     let listener = TcpListener::bind("127.0.0.1:8000").await?;
     let serve_assets = ServeEmbed::<Assets>::new();
     let app = axum::Router::new()
         .fallback_service(serve_assets)
-        .route("/ping", post(ping));
+        .route("/api/ping", post(ping));
     println!("Server started!");
     axum::serve(listener, app).await?;
     Ok(())

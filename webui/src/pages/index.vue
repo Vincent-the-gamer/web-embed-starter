@@ -5,6 +5,10 @@ defineOptions({
   name: "IndexPage",
 });
 
+const mode = import.meta.env.MODE;
+const baseUrl =
+  mode === "prod" ? import.meta.env.VITE_API_BASE : "http://localhost:8001/api";
+
 const viteVersion = packageJson.devDependencies.vite;
 
 const response = ref<Record<string, any>>({});
@@ -17,7 +21,7 @@ function go() {
 }
 
 async function ping() {
-  const resp = await fetch("http://localhost:8000/ping", {
+  const resp = await fetch(`${baseUrl}/ping`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
